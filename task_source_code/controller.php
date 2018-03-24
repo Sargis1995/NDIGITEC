@@ -72,7 +72,7 @@ class Controller
             else{
                 $products[$product['product_parent']]['attributes'][] = $product['attribute_name'] ;//get product attributes
                 $products[$product['product_parent']]['attributes']=array_unique($products[$product['product_parent']]['attributes']);//make attributes array unique
-                if(!is_array($products[$product['product_parent']]['variations'])){
+                if(!isset($products[$product['product_parent']]['variations']) || !is_array($products[$product['product_parent']]['variations'])){
 					$products[$product['product_parent']]['variations'] = array();
 				}
 				if(!isset($products[$product['product_parent']]['variations'][$product['id']])){
